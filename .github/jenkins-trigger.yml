@@ -2,7 +2,7 @@ name: CI/CD with Jenkins
 on:
   pull_request:
     branches:
-      - main # Replace with your branch name
+      - dev02 # Replace with your branch name
 
 jobs:
   build:
