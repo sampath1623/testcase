@@ -1,0 +1,18 @@
+name: CI/CD with Jenkins
+on:
+  pull_request:
+    branches:
+      - dev02 # Replace with your branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Trigger Jenkins Job
+      run: |
+        curl -X POST "http://3.133.79.216:8080/job/jenkins-github-webhook/buildWithParameters"   #?token=your-token"
+   
