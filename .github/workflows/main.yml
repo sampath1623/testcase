@@ -12,7 +12,6 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-		
       - name: Trigger Webhook
         if: github.event.pull_request.merged == true
         run: |
