@@ -2,3 +2,4 @@ test
 webook testing using the githubactions 
 checking with freestyle job 
 both push and pull events 
+checking only pull events
