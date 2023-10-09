@@ -3,6 +3,7 @@ on:
   pull_request:
     types:
       - closed
+      - merged 
     branches:
       - main # specify the branches you want to trigger the webhook on (e.g., main, master)
 
