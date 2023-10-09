@@ -3,7 +3,7 @@ on:
   pull_request:
     types:
       - closed
-      - merged 
+      - merged
     branches:
       - main # specify the branches you want to trigger the webhook on (e.g., main, master)
 
@@ -13,8 +13,8 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
-      - name: Trigger Webhook
+	    - name: Trigger Webhook
         if: github.event.pull_request.merged == true
         run: |
-          curl -X POST -H "Content-Type: application/json" -d '{"event_type": "pull_request_merged"}' http://3.23.6.46:8080/github-webhook/
+          curl -X POST -H "Content-Type: application/x-www-from-urlencoded" -d '{"event_type": "pull_request_merged"}' http://3.23.6.46:8080/github-webhook/
 
