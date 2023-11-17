@@ -1,4 +1,5 @@
 name: Trigger Webhook on Pull Request Merge or Close
+
 on:
   pull_request:
     types:
@@ -16,5 +17,5 @@ jobs:
       - name: Trigger Webhook
         if: github.event.pull_request.merged == true
         run: |
-          curl -X POST -H "Content-Type: application/x-www-from-urlencoded" -d '{"event_type": "pull_request_merged"}' http://3.23.6.46:8080/github-webhook/
+          curl -v -X POST -H "Content-Type: application/json" -d '{"event_type": "pull_request_merged"}' http://3.23.6.46:8080/github-webhook/
 
